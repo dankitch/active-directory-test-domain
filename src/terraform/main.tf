@@ -5,6 +5,7 @@ resource "random_string" "main" {
 }
 
 resource "azurerm_resource_group" "main" {
-  name     = "rg-${var.application_name}-${var.environment_name}-${random_string.main.result}"
+  name     = "rg-ad-domain-services-${var.domain_dnsname}-${var.primary_region}-${random_string.main.result}"
   location = var.primary_region
 }
+
