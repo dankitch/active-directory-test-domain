@@ -1,4 +1,20 @@
 <!-- BEGIN_TF_DOCS -->
+# Deploys a baseline Active Directory Domain with Terraform
+
+## Introduction
+
+This Terraform configuration is designed to quickly spin up a test Active Directory domain. It automates the creation of the necessary resources in Azure, including a virtual network, relative subnets, a single DC, Win11 client (optional), Firewall, NAT Gateway, Bastion, to provide a fully functional Active Directory environment for testing and development purposes.
+
+Outbound internet connectivity is designed based on this tutorial:
+https://learn.microsoft.com/en-us/azure/nat-gateway/tutorial-hub-spoke-nat-firewall
+
+This deployment assumes total isolation from any existing networking infrastructure in your current Azure subscriptions. Whilst the networking resources included in this deployment may seem overkill for a test domain, I have found that in my experience, it allows one to become familiar with these resources and provides a solid baseline to test and build on, as well as being able to learn as you go. 
+
+This should not be treated as a long-lived environment, and assumes that the resources are being deployed under one subscription, e.g., a Sandbox subscription, where resources can be created and destroyed at will. 
+
+## Configuration
+
+The inputs vars are defined in the `terraform.tfvars` file, which includes parameters such as the subscription ID, primary region, domain DNS name, and virtual network address space.
 ## Requirements
 
 | Name | Version |
@@ -56,4 +72,21 @@ No modules.
 ## Outputs
 
 No outputs.
+
+## Useage
+
+### Local testing ###
+
+Assuming you are running terraform locally:
+
+1. Create a `.debug.tfvars` in the `root` directory and define the same input variables that are present in the `terraform.tfvars` file. 
+
+2. Create a .debug.sh 
+
+`terraform init`
+
+`terraform plan -var-file="terraform.tfvars"`
+
+`terraform apply -var-file="terraform.tfvars"`
+
 <!-- END_TF_DOCS -->

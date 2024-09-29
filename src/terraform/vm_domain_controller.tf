@@ -1,13 +1,15 @@
 resource "azurerm_network_interface" "dc_nic" {
   location            = azurerm_resource_group.main.location
-  name                = "${var.dc_hostname}-${random_string.main.result}"
+  name                = "${var.dc_hostname}-${var.primary_region}-${random_string.main.result}"
   resource_group_name = azurerm_resource_group.main.name
   ip_configuration {
     name                          = "internal"
     private_ip_address_allocation = "Static"
     private_ip_address            = cidrhost(azurerm_subnet.dc_subnet.address_prefixes[0], 5)
     subnet_id                     = azurerm_subnet.dc_subnet.id
+
   }
+
 
 }
 
