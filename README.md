@@ -77,16 +77,14 @@ No outputs.
 
 ### Local testing ###
 
-Assuming you are running terraform locally:
+Assuming you are running terraform locally for testing:
 
 1. Create a `.debug.tfvars` in the `root` directory and define the same input variables that are present in the `terraform.tfvars` file. 
 
-2. Create a .debug.sh 
-
 `terraform init`
 
-`terraform plan -var-file="terraform.tfvars"`
+`terraform plan -var-file=".debug.tfvars"`
 
-`terraform apply -var-file="terraform.tfvars"`
+`terraform apply -var-file=".debug.tfvars"`
 
 <!-- END_TF_DOCS -->
