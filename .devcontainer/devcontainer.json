@@ -1,0 +1,37 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "installTFsec": true,
+      "installTerraformDocs": true,
+      "version": "latest",
+      "tflint": "latest"
+    },
+    "ghcr.io/devcontainers/features/powershell:1": {
+      "version": "latest",
+      "modules": [
+        "Az"
+      ]
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "git.path": "/usr/bin/git",
+        "workbench.iconTheme": "vscode-icons",
+        "vsicons.dontShowNewVersionMessage": true
+      },
+      "extensions": [
+        "hashicorp.hcl",
+        "hashicorp.terraform",
+        "DavidAnson.vscode-markdownlint",
+        "ms-vscode.powershell",
+        "vscode-icons-team.vscode-icons",
+        "ms-vscode.azurecli",
+        "ms-azuretools.vscode-azureterraform",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  }
+}
