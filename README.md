@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This Terraform configuration is designed to quickly spin up a test Active Directory domain. It automates the creation of the necessary resources in Azure, including a virtual network, relative subnets, a single DC, Win11 client (optional), Firewall, NAT Gateway, Bastion, to provide a fully functional Active Directory environment for testing and development purposes.
+This Terraform configuration is designed to quickly spin up a test Active Directory domain. It automates the creation of the necessary resources in Azure, including a virtual network, relative subnets, a single DC, Win11 client (optional), Firewall, NAT Gateway, Bastion, all to provide a fully functional Active Directory environment for testing and development purposes.
 
 Outbound internet connectivity is designed based on this tutorial:
 https://learn.microsoft.com/en-us/azure/nat-gateway/tutorial-hub-spoke-nat-firewall
